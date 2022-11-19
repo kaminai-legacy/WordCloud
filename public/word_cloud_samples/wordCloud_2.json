@@ -1,0 +1,714 @@
+{
+    "id": "wordCloud_2",
+    "groupId": "group_2",
+    "description": "Word cloud",
+    "type": "DOC",
+    "cardType": "wordCloud",
+    
+    "items": [
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Swissgrid"
+            },
+            {
+            "key": "count",
+            "value": 15
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "UBS"
+            },
+            {
+            "key": "count",
+            "value": 14
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Credit Suisse"
+            },
+            {
+            "key": "count",
+            "value": 10
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "ALSO Holding"
+            },
+            {
+            "key": "count",
+            "value": 5
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Ascom"
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Bâloise"
+            },
+            {
+            "key": "count",
+            "value": 5
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Bata Shoes"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Berne eXchange"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Breitling SA"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Century Time Gems"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Circus Knie"
+            },
+            {
+            "key": "count",
+            "value": 3
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Coca-Cola HBC AG"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Coresystems"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Denner (supermarkets)"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Dormakaba"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Emmi AG"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Feldschlösschen"
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Geberit"
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Glencore"
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Hamilton Watch Company"
+            },
+            {
+            "key": "count",
+            "value": 3
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Hublot"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Jaeger-LeCoultre"
+            },
+            {
+            "key": "count",
+            "value": 1
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Julius Baer Group"
+            },
+            {
+            "key": "count",
+            "value": 3
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Kuoni Travel"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Lions Air"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Luftseilbahn Adliswil-Felsenegg"
+            },
+            {
+            "key": "count",
+            "value": 3
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Mediterranean Shipping Company"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Mövenpick Hotels & Resorts"
+            },
+            {
+            "key": "count",
+            "value": 5
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Novartis"
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Patek Philippe & Co."
+            },
+            {
+            "key": "count",
+            "value": 4
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Radio Zürisee"
+            },
+            {
+            "key": "count",
+            "value": 2
+            }
+        ]
+        },
+        {
+        "type": "DOC",
+        "metadata": {},
+        "values": [
+            {
+            "key": "entityId",
+            "value": "V_b08853d84407439f952c6f641b365984"
+            },
+            {
+            "key": "entityConcept",
+            "value": "http://huha.com/minimal#organization"
+            },
+            {
+            "key": "entityTitle",
+            "value": "Rieter"
+            },
+            {
+            "key": "count",
+            "value": 3
+            }
+        ]
+        }
+    ]
+}
