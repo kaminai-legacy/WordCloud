@@ -5,19 +5,23 @@ import WordCloud from '@/components/WordCloud.vue';
 </script>
 
 <template>
-  <header>
+  <header class="center-h">
     <h1>WordCloud</h1>
     <nav>
-      <Filter/>
+      <Filter />
     </nav>
   </header>
-  <aside>
-    <DatasetManager/>
-  </aside>
-  <main>
-    <WordCloud />
-  </main>
+  <section>
+    <aside  class="center-h">
+      <DatasetManager />
+    </aside>
+    <main  class="center-h">
+      <WordCloud />
+    </main>
+  </section>
+
 </template>
 
 <style scoped>
+
 </style>
