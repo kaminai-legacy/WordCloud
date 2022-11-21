@@ -1,6 +1,6 @@
 <script setup>
 import * as d3 from 'd3'
-import * as cloud from 'd3-cloud'
+import cloud from 'd3-cloud'
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 
