@@ -1,7 +1,7 @@
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-import { getDatasetSamples } from '@/services/datasets.js';
+import { getDatasetSamples, parseDataset, parseDatasetItem } from '@/services/datasets.js';
 
 export const useDatasetsStore = defineStore('datasets', () => {
   const datasetsSamples = getDatasetSamples()
@@ -19,14 +19,14 @@ export const useDatasetsStore = defineStore('datasets', () => {
 
   const filters = computed(() => {
     if (!currentDataset.value) {
-      return []
+      return currentDataset.value;
     }
     let filters = new Set([]);
     const { items } = currentDataset.value;
 
     items.forEach(item => {
-
-      const entityConcept = item.values.filter(i => i.key === 'entityConcept').at(0).value
+      const parsedItem = parseDatasetItem(item)
+      const entityConcept = parsedItem.data.entityConcept
       filters.add(entityConcept.split('#').at(-1));
     });
 
@@ -35,17 +35,32 @@ export const useDatasetsStore = defineStore('datasets', () => {
 
   const datasetSamples = computed(() => {
     if (!currentDataset.value) {
-      return null;
+      return currentDataset.value;
     }
     const { items } = currentDataset.value;
     if (currentDatasetFilter.value) {
       return items.filter(item => {
-        const entityConcept = item.values.filter(i => i.key === 'entityConcept').at(0).value;
+        const parsedItem = parseDatasetItem(item)
+        const entityConcept = parsedItem.data.entityConcept
         return entityConcept.includes(currentDatasetFilter.value)
       })
     } else {
       return items
     }
+  })
+
+  const datasetSamplesPrepared = computed(() => {
+    if (!datasetSamples.value) {
+      return datasetSamples.value;
+    }
+
+    return parseDataset(datasetSamples.value).map(item => {
+      const {data} = item;
+      return {
+        label: data.entityTitle,
+        weight: data.count,
+      }
+    })
   })
 
   async function selectDataset(datasetName) {
@@ -59,5 +74,5 @@ export const useDatasetsStore = defineStore('datasets', () => {
     currentDatasetFilter.value = currentDatasetFilter.value === filterName ? null : filterName;
   }
 
-  return { currentDataset, datasetSamples, currentDatasetFilter, currentDatasetPath, datasetsSamplesShortPaths, filters, selectDataset, selectDatasetFilter }
+  return { currentDataset, datasetSamples, datasetSamplesPrepared, currentDatasetFilter, currentDatasetPath, datasetsSamplesShortPaths, filters, selectDataset, selectDatasetFilter }
 })
