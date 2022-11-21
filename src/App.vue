@@ -6,7 +6,7 @@ import WordCloud from '@/components/WordCloud.vue';
 
 <template>
   <header class="center-h">
-    <h1>WordCloud</h1>
+    <h1 class="title">WordCloud</h1>
     <nav>
       <Filter />
     </nav>
@@ -23,5 +23,8 @@ import WordCloud from '@/components/WordCloud.vue';
 </template>
 
 <style scoped>
-
+  .title{
+    font-size: 3rem;
+    margin: 0;
+  }
 </style>

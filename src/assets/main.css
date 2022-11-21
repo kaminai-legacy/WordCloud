@@ -1,4 +1,4 @@
-/* @import './base.css'; */
+@import "./base.css";
 @import "./normalize.css";
 
 #app {
@@ -9,15 +9,22 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  gap: 0px;
 }
 
 #app > section {
   width: 100%;
-  padding: 20px 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
+}
+
+body{
+  min-height: 100vh;
+  width: calc(100vw - (100vw - 100%));
 }
 
 header {
@@ -28,13 +35,12 @@ aside {
   flex-grow: 0;
   align-self: flex-start;
   padding: 16px;
-  /* align-self: flex-start; */
 }
 
 main {
   flex-grow: 1;
   padding: 16px;
-  /* align-self: flex-end; */
+  align-self: stretch;
 }
 
 .center-h {

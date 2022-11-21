@@ -20,20 +20,28 @@ const { filters, currentDatasetFilter } = storeToRefs(store)
 <style lang="scss" scoped>
     .filter{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
+        margin: 10px 0;
+
+        max-width: 80vw;
 
         &__item{
             text-transform: capitalize;
+            font-size: 1.2rem;
 
             cursor: pointer;
             transition: all .2s linear;
+            color: var(--main-color);
+            font-weight: 500;
 
-            &:hover {
-                color: blue;
+            &:hover:not(&--active) {
+                color: var(--main-color-lighten);
             }
 
             &--active {
-                color: green;
+                color: var(--second-color);
             }
         }
     }

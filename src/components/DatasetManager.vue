@@ -33,6 +33,7 @@ const { currentDatasetPath, datasetsSamplesShortPaths } = storeToRefs(store)
     &__title {
         &>h2 {
             margin-bottom: 8px;
+            font-size: 1.6rem;
         }
     }
 
@@ -44,13 +45,17 @@ const { currentDatasetPath, datasetsSamplesShortPaths } = storeToRefs(store)
         &__item {
             cursor: pointer;
             transition: all .2s linear;
+            font-size: 1rem;
 
-            &:hover {
-                color: gray;
+            color: var(--main-color);
+            font-weight: 500;
+
+            &:hover:not(&--active) {
+                color: var(--main-color-lighten);
             }
 
             &--active {
-                color: green;
+                color: var(--second-color);
             }
         }
     }
