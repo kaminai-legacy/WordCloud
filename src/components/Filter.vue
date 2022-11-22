@@ -10,6 +10,7 @@ const { filters, currentDatasetFilter } = storeToRefs(store)
 
 <template>
     <div class="filter">
+        <div class="filter__title">Categories :</div><div class="filter__no-dataset" v-if="!filters?.size">No Dataset Selected</div>
         <div class="filter__item no-select" :class="{ 'filter__item--active': currentDatasetFilter === filter }" v-for="filter in filters" :key="filter"
             @click="store.selectDatasetFilter(filter)">
             {{ filter }}
@@ -26,6 +27,14 @@ const { filters, currentDatasetFilter } = storeToRefs(store)
         margin: 10px 0;
 
         max-width: 80vw;
+
+        &__title{
+            font-size: 1.2rem;
+        }
+
+        &__no-dataset{
+            font-size: 1.2rem;
+        }
 
         &__item{
             text-transform: capitalize;
