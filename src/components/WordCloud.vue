@@ -6,7 +6,7 @@ import { storeToRefs } from 'pinia'
 
 import { useDatasetsStore } from '@/stores/datasets.js';
 import { toFloat } from '@/helpers/mathHelper.js';
-import { throttle } from '@/helpers/logicHelper.js';
+import { throttle, refreshUI } from '@/helpers/logicHelper.js';
 
 const store = useDatasetsStore()
 const { datasetSamplesPrepared } = storeToRefs(store)
@@ -26,17 +26,33 @@ const debounceIncCounter = throttle(incCounter, 150);
 
 function showError(error) {
    if (wordcloud.value) {
-      console.log('error')
       wordcloud.value.innerHTML = `<div class="error-message">${error}</div>`
    }
 }
 
-function drawCloud() {
+function showLoader() {
+   if (wordcloud.value) {
+      wordcloud.value.innerHTML = `<div class="loading"></div>`
+   }
+   return true
+}
+
+function hideLoader() {
+   if (wordcloud.value) {
+      d3.select(wordcloud.value).selectAll('.loading').remove();
+   }
+   return true
+}
+
+async function drawCloud() {
    d3.select(wordcloud.value).selectAll('*').remove();
 
    if (!datasetSamplesPrepared.value) {
       return
    }
+
+   showLoader();
+   await refreshUI();
 
    const samples = (datasetSamplesPrepared.value || []).sort((a, b) => a.weight - b.weight),
       words = (samples || []).map(function (d) { return { text: d.label, size: d.weight }; }),
@@ -149,13 +165,11 @@ function drawCloud() {
       let bottomDiff = svgDomRect.bottom - svgGDomRect.bottom
 
       svg
-         //  .transition().delay(1e2).duration(1e3)
          .attr("transform", "scale(" + scale + ")translate(" + [
             translateX + (rightDiff - leftDiff) / 2, translateY + (bottomDiff - topDiff) / 2
          ] + ")")
-
-      svgGDom = wordcloud.value.querySelector('svg > g'), svgGDomRect = svgGDom.getBoundingClientRect()
    }
+   hideLoader();
 }
 
 onMounted(() => {
@@ -167,8 +181,10 @@ onUnmounted(() => {
 });
 
 
-watch(datasetSamples, () => {
-   drawCloud();
+watch(datasetSamples, async () => {
+
+   drawCloud()
+
 })
 </script>
 
