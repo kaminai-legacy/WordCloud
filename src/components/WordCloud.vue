@@ -18,16 +18,22 @@ const datasetSamples = computed(() => {
    return counter.value + JSON.stringify(datasetSamplesPrepared.value)
 })
 
-function incCounter(){
+function incCounter() {
    ++counter.value
 }
 
 const debounceIncCounter = throttle(incCounter, 150);
 
+function showError(error) {
+   if (wordcloud.value) {
+      wordcloud.value.innerText = error
+   }
+}
+
 function drawCloud() {
    d3.select(wordcloud.value).selectAll('*').remove();
 
-   if(!datasetSamplesPrepared.value){
+   if (!datasetSamplesPrepared.value) {
       return
    }
 
@@ -44,7 +50,7 @@ function drawCloud() {
    samples.length && fontSize.domain([+minWeight || 1, +maxWeight])
 
 
-   let scale, wordScale = 1, tries = 0, arr = [], tryCount = 3
+   let scale, wordScale = 1, tries = 0, tryLastWord = 0, arr = [], tryCount = 3, lastWordCount = 0, tryLastWordCount = tryCount - 1
 
    const width = Math.floor(rootDomRect.width - 20),
       height = Math.floor(rootDomRect.height - 20)
@@ -52,6 +58,7 @@ function drawCloud() {
    const svg = d3.select(wordcloud.value).append("svg")
       .attr("width", width)
       .attr("height", height)
+      .style("display", "inline-block")
       .append("g")
       .attr("transform", "scale(" + 1 + ")translate(" + [width >> 1, height >> 1] + ")")
 
@@ -81,13 +88,18 @@ function drawCloud() {
             tries = 0
             arr = []
          }
+         if (lastWordCount === words.length) {
+            tryLastWord++
+         } else {
+            lastWordCount = words.length;
+            tryLastWord = 0
+         }
+         if (tryLastWord === tryLastWordCount) {
+            return showError('Sorry, we cannot fit all words');
+         }
          layout.start();
          return;
       }
-
-      scale = e
-         ? Math.min(width / Math.abs(e[1].x - width / 2), width / Math.abs(e[0].x - width / 2), height / Math.abs(e[1].y - height / 2), height / Math.abs(e[0].y - height / 2)) / 2
-         : 1
 
       svg
          .selectAll("text")
@@ -103,7 +115,8 @@ function drawCloud() {
          })
          .text(function (d) { return d.text; });
 
-      const svgGDom = wordcloud.value.querySelector('svg > g'), svgGDomRect = svgGDom.getBoundingClientRect()
+      const svgDom = wordcloud.value.querySelector('svg'), svgDomRect = svgDom.getBoundingClientRect()
+      let svgGDom = wordcloud.value.querySelector('svg > g'), svgGDomRect = svgGDom.getBoundingClientRect()
       const Xscale = width / svgGDomRect.width, Yscale = height / svgGDomRect.height;
       scale = toFloat(Math.min(Xscale, Yscale), 3)
 
@@ -117,9 +130,30 @@ function drawCloud() {
             scale -= partOfScale;
          }
       }
+
+      let translateX = width >> 1
+      let translateY = height >> 1
+
       svg
-      // .transition().delay(100).duration(1e3)
-      .attr("transform", "translate(" + [width >> 1, height >> 1] + ")scale(" + scale * 0.9 + ")")
+         .attr("transform", "scale(" + 1 + ")translate(" + [
+            translateX, translateY
+         ] + ")")
+         .attr("transform-origin", "center")
+         .attr("transform-box", "fill-box")
+
+      svgGDom = wordcloud.value.querySelector('svg > g'), svgGDomRect = svgGDom.getBoundingClientRect()
+      let leftDiff = svgGDomRect.left - svgDomRect.left
+      let rightDiff = svgDomRect.right - svgGDomRect.right
+      let topDiff = svgGDomRect.top - svgDomRect.top
+      let bottomDiff = svgDomRect.bottom - svgGDomRect.bottom
+
+      svg
+         //  .transition().delay(1e2).duration(1e3)
+         .attr("transform", "scale(" + scale + ")translate(" + [
+            translateX + (rightDiff - leftDiff) / 2, translateY + (bottomDiff - topDiff) / 2
+         ] + ")")
+
+      svgGDom = wordcloud.value.querySelector('svg > g'), svgGDomRect = svgGDom.getBoundingClientRect()
    }
 }
 
