@@ -26,7 +26,8 @@ const debounceIncCounter = throttle(incCounter, 150);
 
 function showError(error) {
    if (wordcloud.value) {
-      wordcloud.value.innerText = error
+      console.log('error')
+      wordcloud.value.innerHTML = `<div class="error-message">${error}</div>`
    }
 }
 

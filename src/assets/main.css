@@ -22,6 +22,12 @@
   flex-grow: 1;
 }
 
+@media (max-width: 640px) {
+  #app > section {
+    flex-direction: column;
+  }
+}
+
 body{
   min-height: 100vh;
   width: calc(100vw - (100vw - 100%));
@@ -51,4 +57,10 @@ main {
 
 .no-select {
   user-select: none;
+}
+
+.error-message{
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
 }
