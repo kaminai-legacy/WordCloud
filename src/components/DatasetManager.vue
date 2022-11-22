@@ -14,7 +14,7 @@ const { currentDatasetPath, datasetsSamplesShortPaths } = storeToRefs(store)
             <h2 class="nowrap">Available datasets</h2>
         </header>
         <div class="dataset-manager__content">
-            <div class="dataset-manager__content__item"
+            <div class="dataset-manager__content__item no-select"
                 :class="{ 'dataset-manager__content__item--active': currentDatasetPath === datasetPath.full }"
                 v-for="datasetPath in datasetsSamplesShortPaths" :key="datasetPath.full"
                 @click="store.selectDataset(datasetPath.full)">

@@ -10,7 +10,7 @@ const { filters, currentDatasetFilter } = storeToRefs(store)
 
 <template>
     <div class="filter">
-        <div class="filter__item" :class="{ 'filter__item--active': currentDatasetFilter === filter }" v-for="filter in filters" :key="filter"
+        <div class="filter__item no-select" :class="{ 'filter__item--active': currentDatasetFilter === filter }" v-for="filter in filters" :key="filter"
             @click="store.selectDatasetFilter(filter)">
             {{ filter }}
         </div>
