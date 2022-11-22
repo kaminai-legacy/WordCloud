@@ -6,13 +6,17 @@ import { storeToRefs } from 'pinia'
 
 import { useDatasetsStore } from '@/stores/datasets.js';
 import { toFloat } from '@/helpers/mathHelper.js';
-import { throttle, refreshUI } from '@/helpers/logicHelper.js';
+import { throttle, debounce, refreshUI } from '@/helpers/logicHelper.js';
 
 const store = useDatasetsStore()
 const { datasetSamplesPrepared } = storeToRefs(store)
 
 const counter = ref(0);
 const wordcloud = ref(null);
+const layout = ref(cloud());
+const isDrawing = ref(false);
+
+const timeSleep = 150;
 
 const datasetSamples = computed(() => {
    return counter.value + JSON.stringify(datasetSamplesPrepared.value)
@@ -22,7 +26,7 @@ function incCounter() {
    ++counter.value
 }
 
-const debounceIncCounter = throttle(incCounter, 150);
+const throttleIncCounter = throttle(incCounter, timeSleep);
 
 function showError(error) {
    if (wordcloud.value) {
@@ -45,14 +49,19 @@ function hideLoader() {
 }
 
 async function drawCloud() {
-   d3.select(wordcloud.value).selectAll('*').remove();
-
    if (!datasetSamplesPrepared.value) {
       return
    }
 
+   if (isDrawing.value) {
+      return debounce(drawCloud, timeSleep)
+   }
+
+   d3.select(wordcloud.value).selectAll('*').remove();
+
+   isDrawing.value = true
    showLoader();
-   await refreshUI();
+   await refreshUI(timeSleep);
 
    const samples = (datasetSamplesPrepared.value || []).sort((a, b) => a.weight - b.weight),
       words = (samples || []).map(function (d) { return { text: d.label, size: d.weight }; }),
@@ -79,7 +88,7 @@ async function drawCloud() {
       .append("g")
       .attr("transform", "scale(" + 1 + ")translate(" + [width >> 1, height >> 1] + ")")
 
-   const layout = cloud()
+   layout.value
       .spiral('rectangular')
       .size([width, height])
       .words(words)
@@ -91,13 +100,13 @@ async function drawCloud() {
       })
       .on("end", draw);
 
-   layout.start();
+   layout.value.start();
 
-   function draw(words, e) {
+   function draw(words) {
       if (words.length < expected) {
          arr.push(words.length)
          tries++;
-         layout.stop();
+         layout.value.stop();
          if (tries === tryCount) {
             const avg = arr.reduce((prev, next) => { return prev + next }, 0) / tryCount
             wordScale *= avg / expected
@@ -114,7 +123,7 @@ async function drawCloud() {
          if (tryLastWord === tryLastWordCount) {
             return showError('Sorry, we cannot fit all words');
          }
-         layout.start();
+         layout.value.start();
          return;
       }
 
@@ -170,21 +179,20 @@ async function drawCloud() {
          ] + ")")
    }
    hideLoader();
+   isDrawing.value = false
 }
 
 onMounted(() => {
-   window.addEventListener('resize', debounceIncCounter);
+   window.addEventListener('resize', throttleIncCounter);
 });
 
 onUnmounted(() => {
-   window.removeEventListener('resize', debounceIncCounter);
+   window.removeEventListener('resize', throttleIncCounter);
 });
 
 
-watch(datasetSamples, async () => {
-
+watch(datasetSamples, () => {
    drawCloud()
-
 })
 </script>
 

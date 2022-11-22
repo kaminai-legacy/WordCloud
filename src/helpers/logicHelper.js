@@ -17,6 +17,6 @@ export const throttle = (func, delay) => {
     }
 }
 
-export const refreshUI = async() => {
-    await new Promise(r => setTimeout(r, 0));
+export const refreshUI = async(t = 0) => {
+    await new Promise(r => setTimeout(r, t));
 }
